@@ -22,7 +22,7 @@ def run_helper(context, root, suffix, exports, images, source_images, resources,
     fp = uprefs.filepaths
     print("Creating project at %r" % root)
     if not suffix:
-        root = root.replace(".blProj")
+        root = root.replace(".blProj", "")
     os.mkdir(root)
     bpy.ops.wm.save_as_mainfile(filepath=os.path.join(root, "project.blend"))
     
