@@ -52,9 +52,9 @@ def run_helper(context, root, suffix, exports, images, source_images, resources,
     print("Done")
 
 class ProjectOptions(Operator, ExportHelper):
-    """This appears in the tooltip of the operator and in the generated docs"""
+    """Create a new Blender Project"""
     bl_idname = "blender_project.helper"
-    bl_label = "Blender Project Helper"
+    bl_label = "Create New Project"
 
     # ImportHelper mixin class uses this
     filename_ext = ".blProj"
@@ -114,12 +114,11 @@ def menu_func_import(self, context):
 
 def register():
     bpy.utils.register_class(ProjectOptions)
-    bpy.types.INFO_MT_file.append(menu_func_import)
-
+    bpy.types.INFO_MT_file.prepend(menu_func_import)
 
 def unregister():
     bpy.utils.unregister_class(ProjectOptions)
-    bpy.types.INFO_MT_file_import.remove(menu_func_import)
+    bpy.types.INFO_MT_file.remove(menu_func_import)
 
 
 if __name__ == "__main__":
