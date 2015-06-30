@@ -1,6 +1,6 @@
 ---
 layout: default
-title: XGE
+title: Blender Utilities
 permalink: /
 ---
 
